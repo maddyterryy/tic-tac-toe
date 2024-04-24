@@ -35,7 +35,8 @@ setSquares(nextSquares);
 setXIsNext(!xIsNext);
 }
 
-//lets players know when game is over or whose turn it is
+//the status will display the winner if the game is over
+//or which player's turn is next if the game is ongoing
 const winner = calculateWinner(squares);
 let status;
 if (winner){
@@ -48,6 +49,7 @@ if (winner){
   //the code after '=>' will run after square is clicked
   return (
     <>
+  <div className="status">{status}</div>
   <div className="board-row">
   <Square value={squares[0]} onSquareClick={() => handleClick(0)} /> 
   <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
